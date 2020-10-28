@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="pic">
+        <img src="assets/hero-image.png" alt="house" class="banner">
+    </div>
+    <div class="search-bar">
+        <input #searchText type="text" class="search-input">
+        <button type="button" class="search-button" (click)="searchAgents(searchText.value)">SEARCH</button>
+    </div>
+</div>
+
+<div class="grid-container">
+    <div *ngFor="let agent of AgentsList" class="agent-container">
+            <img src={{agent.ImageUrl}} alt="agent-pic"
+                class="agent-pic rounded-circle">
+            <div class="agent-detail">
+                <h3>
+                    {{agent.Name}}
+                </h3>
+                <h4>
+                    {{agent.SecondaryName}}
+                </h4>
+            </div>
+    </div>
+</div>
